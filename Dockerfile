@@ -1,7 +1,2 @@
-FROM amazon/aws-cli:2.2.36
-RUN yum update -y \
-  && yum install -y python3 git docker \
-  && yum clean all
-
-# Override default entrypoint which is the 'aws' tool
-ENTRYPOINT [""]
+FROM docker:20
+RUN apk add --update --no-cache python3 curl git
