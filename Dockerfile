@@ -1,5 +1,4 @@
 FROM docker:20
 
-RUN apk add --update --no-cache python3 curl git
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py
-RUN /usr/bin/python3 -m pip install --no-cache-dir awscli
+RUN apk add --update --no-cache python3 curl git zip
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && unzip awscliv2.zip && rm awscliv2.zip && ./aws/install
